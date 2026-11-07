@@ -1,0 +1,28 @@
+# Локальные артефакты сборки и журналы
+logs/
+build/work/
+*.log
+
+# Ключи подписи и пароли — НИКОГДА не коммитить
+*.jks
+*.keystore
+build/keystore.properties
+*.idsig
+
+# Сборочный мусор
+*.class
+*.dex
+*.ap_
+*.zip.tmp
+out/
+
+# ОС и IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.iml
+
+# Личные файлы
+private/

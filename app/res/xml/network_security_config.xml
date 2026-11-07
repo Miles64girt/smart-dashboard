@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 7.0 не содержит корневые сертификаты ISRG (Let's Encrypt) в системном
+  хранилище — они появились только в Android 7.1.1. Домены погоды используют
+  Let's Encrypt, поэтому официальные корни ISRG Root X1/X2 добавлены как
+  дополнительные доверенные якоря ТОЛЬКО для доменов погоды.
+  Остальное доверие остаётся системным (ничего не ослабляется глобально).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <domain-config>
+        <domain includeSubdomains="true">open-meteo.com</domain>
+        <domain includeSubdomains="true">wttr.in</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="@raw/isrg_root_x1" />
+            <certificates src="@raw/isrg_root_x2" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
