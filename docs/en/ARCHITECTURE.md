@@ -198,7 +198,7 @@ Privacy principles:
 | Gradle / Android Studio | Not needed for a project this small. A direct `aapt2 → javac → d8 → zipalign → apksigner` build is faster, reproducible and downloads about 320 MB of tools instead of a full IDE and dependency graph |
 | SVG/PNG assets | The weather icon, buttons and success animation are drawn with `Canvas` primitives; there is nothing to scale or decode |
 
-The design goal is a panel that starts instantly, uses about **12 MB PSS**, stays near **0% CPU when idle**, and fits in about **60 KB of APK**. Everything above is a direct consequence of that goal.
+The design goal is a panel that starts instantly, uses about **12 MB PSS**, stays near **0% CPU when idle**, and fits in about **53 KB of APK**. Everything above is a direct consequence of that goal.
 
 ## Build without Gradle
 

@@ -5,23 +5,33 @@
 [![Android 7.0+](https://img.shields.io/badge/Android-7.0%2B-3DDC84?logo=android&logoColor=white)](#)
 [![No root](https://img.shields.io/badge/root-not%20required-brightgreen)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![APK size](https://img.shields.io/badge/APK-about%2060%20KB-informational)](#)
+[![APK size](https://img.shields.io/badge/APK-about%2053%20KB-informational)](#)
 
 > ## ⚠️ Tested on one tablet only
 >
-> Smart Dashboard was developed and verified on **exactly one device** — a **Huawei MediaPad T3 7 (BG2-U01)** running **Android 7.0** (API 24), with a **600×1024** screen.
-> It has **not** been tested on any other phone or tablet.
+> Smart Dashboard was developed and verified on **exactly one device** — a **Huawei MediaPad T3 7 (BG2-U01)** running **Android 7.0** (API 24), 32-bit, 1 GB RAM, with a **600×1024** screen.
+> It has **not** been tested on any other phone, tablet or firmware.
 > Before you rely on it every day, test it on your own device — see [docs/en/TESTING.md](docs/en/TESTING.md) for a checklist.
 > **Use it at your own risk.**
 
+## Download
+
+- **[`apk/SmartDashboard-1.3.apk`](apk/SmartDashboard-1.3.apk)** — the signed, ready-to-install APK straight from this repository (about 53 KB).
+- **[Releases → latest](https://github.com/Miles64girt/smart-dashboard/releases/latest)** — the same APK on the release page, with the changelog.
+
+Manual, step-by-step installation: [docs/en/INSTALL.md](docs/en/INSTALL.md). If the layout does not fit your screen, copy [PROMPT_EN.md](PROMPT_EN.md) and attach your files.
+
 | Day dashboard | Evening packing list | Everything is packed |
 |---|---|---|
-| ![Day dashboard: weather on the left, today's calendar on the right](docs/screens/01_dashboard_day.png) | ![Evening packing list — empty by default](docs/screens/03_packing_empty.png) | ![Everything is packed — success animation](docs/screens/06_success.png) |
+| ![Day dashboard: weather on the left, demo calendar events on the right](docs/screens/01_dashboard_day.png) | ![Evening packing list — empty by default](docs/screens/03_packing_empty.png) | ![Everything is packed — success animation](docs/screens/06_success.png) |
 
-The screenshots are demos: the city, the calendar events and the packing items are fictional. All images live in [docs/screens](docs/screens/README.md).
+More: [night mode](docs/screens/02_dashboard_night.png) · [a list with checked items](docs/screens/04_packing_items.png) · [adding your own item](docs/screens/05_add_item.png).
+
+The screenshots are demos: **the calendar events and the packing items are fictional.** All images live in [docs/screens](docs/screens/README.md).
 
 ## Contents
 
+- [Download](#download)
 - [What it is](#what-it-is)
 - [What it shows](#what-it-shows)
 - [Quick start](#quick-start)
@@ -42,7 +52,7 @@ Smart Dashboard turns a spare Android tablet into a home information screen (a k
 
 The app wakes the screen at 08:00, switches to night mode and turns the screen off at 21:00, starts automatically after a reboot, and keeps working offline with the last cached weather.
 
-It is deliberately tiny and old-school: one activity, one custom `Canvas` view, no AndroidX, no Gradle dependency graph, no Google Play Services, no root. The APK is **about 60 KB**.
+It is deliberately tiny and old-school: one activity, one custom `Canvas` view, no AndroidX, no Gradle dependency graph, no Google Play Services, no root. The APK is **about 53 KB**.
 
 > The on-screen interface is currently in Russian (the app is not localized yet); this repository is documented in both English and Russian.
 
@@ -87,7 +97,7 @@ Weather is refreshed every 30 minutes, the calendar every 5 minutes, and immedia
 
 ## Quick start
 
-1. **Download the APK** — take [`apk/SmartDashboard-1.3.apk`](apk/SmartDashboard-1.3.apk) from this repository or from the [Releases page](https://github.com/Miles64girt/smart-dashboard/releases).
+1. **Download the APK** — take [`apk/SmartDashboard-1.3.apk`](apk/SmartDashboard-1.3.apk) from this repository or from the [latest release](https://github.com/Miles64girt/smart-dashboard/releases/latest).
 2. **Install it manually** — you will have to allow installation from unknown sources and confirm a Play Protect warning. Step-by-step instructions: [docs/en/INSTALL.md](docs/en/INSTALL.md).
 3. **Grant the calendar permission** — the app asks for `READ_CALENDAR` on first launch so it can show today's events.
 4. **Optionally enable the accessibility service** — only needed for the **⏻** power button; everything else works without it.
@@ -101,11 +111,12 @@ To build the APK yourself instead of downloading it, follow [docs/en/BUILD.md](d
 
 | Parameter | Value |
 |---|---|
+| Version | 1.3 (`versionCode` 4) |
 | Package | `ru.home.dashboard` |
 | Language | Java (no Kotlin) |
 | minSdk / targetSdk | 24 / 24 (Android 7.0) |
 | Third-party libraries | **none** — Android framework only (`Canvas`, `HttpURLConnection`, `org.json`) |
-| APK size | **about 60 KB** |
+| APK size | **about 53 KB** |
 | Memory footprint | about 12 MB PSS |
 | UI rendering | One custom `View` drawn on `Canvas`; no XML layouts, no image assets |
 | Weather | wttr.in (free, no API key; city auto-detected by IP or set manually); optional Open-Meteo fallback for manually set coordinates; result cached on disk |
@@ -181,8 +192,10 @@ smart-dashboard/
 | [ARCHITECTURE — how it works inside](docs/en/ARCHITECTURE.md) | [docs/ru/ARCHITECTURE.md](docs/ru/ARCHITECTURE.md) |
 | [FAQ — frequently asked questions](docs/en/FAQ.md) | [docs/ru/FAQ.md](docs/ru/FAQ.md) |
 | [LIMITATIONS — the honest limits](docs/en/LIMITATIONS.md) | [docs/ru/LIMITATIONS.md](docs/ru/LIMITATIONS.md) |
-| [Screenshots and captions](docs/screens/README.md) | — |
-| [Changelog](CHANGELOG.md) | — |
+| [Screenshots and captions](docs/screens/README.md) | [Скриншоты и подписи](docs/screens/README.md) |
+| [Changelog](CHANGELOG.md) | [CHANGELOG.md](CHANGELOG.md) |
+| [LICENSE — MIT](LICENSE) | [LICENSE](LICENSE) |
+| [PROMPT_EN.md — adaptation prompt](PROMPT_EN.md) | [PROMPT_RU.md](PROMPT_RU.md) |
 
 ## Tested on
 

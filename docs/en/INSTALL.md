@@ -1,4 +1,4 @@
-# Installing Smart Dashboard (ready APK)
+﻿# Installing Smart Dashboard (ready APK)
 
 This guide is for installing the **already built and signed** APK on your tablet. No computer, SDK or build tools are required. If you want to build the APK yourself, read [BUILD.md](BUILD.md) instead.
 
@@ -25,9 +25,9 @@ This guide is for installing the **already built and signed** APK on your tablet
 |---|---|
 | Device | An Android tablet with **Android 7.0 (API 24) or newer** |
 | Screen | Portrait, ideally 600×1024 or a similar aspect ratio — the layout is designed for it |
-| Free space | Negligible: the APK is about 60 KB |
+| Free space | Negligible: the APK is about 53 KB |
 | Internet | Needed for the weather; the calendar is read locally |
-| APK file | [`apk/SmartDashboard-1.3.apk`](../../apk/SmartDashboard-1.3.apk) from this repository or the [Releases page](https://github.com/Miles64girt/smart-dashboard/releases) |
+| APK file | [`apk/SmartDashboard-1.3.apk`](../../apk/SmartDashboard-1.3.apk) from this repository or the [Releases page](https://github.com/Miles64girt/smart-dashboard/releases/latest) |
 | Google account (optional) | Only if you want calendar events. The app reads the system calendar database, so whatever account Android already has synced will be visible |
 
 ## Step 1. Download the APK

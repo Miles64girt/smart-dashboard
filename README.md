@@ -1,11 +1,11 @@
 # Smart Dashboard
 
-**Информационная панель на весь экран для старого Android-планшета.** Погода, рекомендации по одежде и события календаря на сегодня — на одном экране, днём и ночью. Без root, без Google Play, без единой сторонней библиотеки: всё рисуется на `Canvas`, APK весит около 60 КБ.
+**Информационная панель на весь экран для старого Android-планшета.** Погода, рекомендации по одежде и события календаря на сегодня — на одном экране, днём и ночью. Без root, без Google Play, без единой сторонней библиотеки: всё рисуется на `Canvas`, APK весит около 53 КБ.
 
 [![Android 7.0+](https://img.shields.io/badge/Android-7.0%2B-3DDC84?logo=android&logoColor=white)](https://developer.android.com/about/versions/nougat)
 ![No root](https://img.shields.io/badge/root-not%20required-success)
 ![Java](https://img.shields.io/badge/Java-framework%20only-orange?logo=openjdk&logoColor=white)
-![APK size](https://img.shields.io/badge/APK-%E2%89%8860%20KB-lightgrey)
+![APK size](https://img.shields.io/badge/APK-%E2%89%8853%20KB-lightgrey)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ---
@@ -14,18 +14,30 @@
 >
 > Приложение разработано и проверено **только на Huawei MediaPad T3 7 (BG2-U01)**: Android 7.0, 32-бит, 1 ГБ ОЗУ, экран 600×1024, EMUI 5.1.
 >
-> **На других устройствах оно не тестировалось.** Прежде чем оставлять его работать постоянно, проверьте всё сами по [чек-листу для своего устройства](docs/ru/TESTING.md). Используете на свой риск.
+> **На других устройствах (других планшетах, телефонах, прошивках) оно не тестировалось.** Прежде чем оставлять его работать постоянно, проверьте всё сами по [чек-листу для своего устройства](docs/ru/TESTING.md). Используете на свой риск.
+
+---
+
+## Скачать
+
+- **[`apk/SmartDashboard-1.3.apk`](apk/SmartDashboard-1.3.apk)** — готовый подписанный APK прямо из репозитория (около 53 КБ).
+- **[Releases → последняя версия](https://github.com/Miles64girt/smart-dashboard/releases/latest)** — тот же APK на странице релизов, с описанием изменений.
+
+Установка — вручную, по шагам: [docs/ru/INSTALL.md](docs/ru/INSTALL.md). Если ваш планшет не 600×1024 и вёрстка не подходит — скопируйте промт [PROMPT_RU.md](PROMPT_RU.md) и приложите свои файлы.
 
 ---
 
 | Дневная панель | Вечерний список | Всё собрано |
 |---|---|---|
-| ![Дневная панель: погода слева, события календаря справа](docs/screens/01_dashboard_day.png) | ![Вечерний список вещей, пустой по умолчанию](docs/screens/03_packing_empty.png) | ![Анимация успеха: всё собрано](docs/screens/06_success.png) |
+| ![Дневная панель: погода слева, демо-события справа](docs/screens/01_dashboard_day.png) | ![Вечерний список вещей, пустой по умолчанию](docs/screens/03_packing_empty.png) | ![Анимация успеха: всё собрано](docs/screens/06_success.png) |
 
-Скриншоты демонстрационные: город, события и вещи — вымышленные. Все изображения — в [docs/screens](docs/screens/README.md).
+Ещё: [ночной режим](docs/screens/02_dashboard_night.png) · [список с отмеченными вещами](docs/screens/04_packing_items.png) · [добавление своего пункта](docs/screens/05_add_item.png).
+
+Скриншоты демонстрационные: **события и вещи вымышлены.** Все изображения — в [docs/screens](docs/screens/README.md).
 
 ## Оглавление
 
+- [Скачать](#скачать)
 - [Что это](#что-это)
 - [Что показывает](#что-показывает)
 - [Характеристики](#характеристики)
@@ -81,12 +93,13 @@
 
 | Параметр | Значение |
 |---|---|
+| Версия | 1.3 (`versionCode` 4) |
 | Пакет | `ru.home.dashboard` |
 | Язык | Java (Android framework, без Kotlin) |
 | minSdk / targetSdk | 24 / 24 (Android 7.0) |
 | Ориентация | портрет и перевёрнутый портрет; альбомная отключена |
 | Сторонние библиотеки | нет — только Android framework и встроенный `org.json` |
-| Размер APK | около 60 КБ |
+| Размер APK | около 53 КБ |
 | Память | около 12 МБ PSS |
 | Погода | wttr.in (бесплатно, без ключа), резерв Open-Meteo при заданных координатах, кэш на диск |
 | Календарь | `CalendarContract`, только чтение |
@@ -98,7 +111,7 @@
 
 ## Быстрый старт
 
-1. **Скачайте APK** — из папки [`apk/`](apk/) репозитория (`SmartDashboard-1.3.apk`) или со страницы [Releases](https://github.com/Miles64girt/smart-dashboard/releases).
+1. **Скачайте APK** — из папки [`apk/`](apk/SmartDashboard-1.3.apk) репозитория (`SmartDashboard-1.3.apk`) или со страницы [Releases · latest](https://github.com/Miles64girt/smart-dashboard/releases/latest).
 2. **Установите вручную.** На планшете понадобится разрешить установку из неизвестных источников. Play Protect может предупредить, что приложение не проверено, — это нормально для APK не из магазина.
 3. **Выдайте разрешение на календарь** (`READ_CALENDAR`) — без него правая половина будет пустой. Контакты, звонки и другие данные приложению не нужны.
 4. **По желанию включите службу доступности** — только ради кнопки **⏻** с системным меню питания. Приложение ничего не читает и не нажимает само.
@@ -140,7 +153,7 @@ smart-dashboard/
 │  └─ README.md              # кратко о сборке
 ├─ scripts/                  # setup_build_env, install_deploy, dashboard, uninstall
 ├─ docs/
-│  ├─ screens/               # обезличенные скриншоты
+│  ├─ screens/               # обезличенные демо-скриншоты
 │  ├─ ru/                    # документация на русском
 │  └─ en/                    # документация на английском
 └─ .gitignore
@@ -172,6 +185,16 @@ smart-dashboard/
 | [docs/en/ARCHITECTURE.md](docs/en/ARCHITECTURE.md) | architecture and privacy notes |
 | [docs/en/FAQ.md](docs/en/FAQ.md) | frequently asked questions |
 | [docs/en/LIMITATIONS.md](docs/en/LIMITATIONS.md) | known limitations |
+
+### Общее / Shared
+
+| Документ | О чём / About |
+|---|---|
+| [docs/screens/README.md](docs/screens/README.md) | скриншоты и подписи к ним / screenshots and captions |
+| [CHANGELOG.md](CHANGELOG.md) | история версий / version history |
+| [LICENSE](LICENSE) | лицензия MIT / MIT license |
+| [PROMPT_RU.md](PROMPT_RU.md) | промт для адаптации под свой экран (русский) |
+| [PROMPT_EN.md](PROMPT_EN.md) | the same prompt in English |
 
 ## Проверено на…
 

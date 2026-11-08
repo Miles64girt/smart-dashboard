@@ -1,4 +1,4 @@
-# FAQ
+﻿# FAQ
 
 Short answers to the questions people ask most often about Smart Dashboard. For deeper details follow the links to the other documents.
 
@@ -19,7 +19,7 @@ Short answers to the questions people ask most often about Smart Dashboard. For 
 - [Why is the packing list empty?](#why-is-the-packing-list-empty)
 - [How do I add or remove packing items?](#how-do-i-add-or-remove-packing-items)
 - [Is it safe? What data does it send?](#is-it-safe-what-data-does-it-send)
-- [Why is the APK only about 60 KB?](#why-is-the-apk-only-about-60-kb)
+- [Why is the APK only about 53 KB?](#why-is-the-apk-only-about-53-kb)
 - [How do I update to a new version?](#how-do-i-update-to-a-new-version)
 
 ## Why doesn't the panel start by itself after a reboot?
@@ -146,13 +146,13 @@ If you want a few default items in **your own** build, set `DEFAULT_PACKING_ITEM
 
 Full breakdown: [ARCHITECTURE.md](ARCHITECTURE.md#permissions-and-privacy).
 
-## Why is the APK only about 60 KB?
+## Why is the APK only about 53 KB?
 
-Because there is almost nothing inside: no AndroidX, no image assets, no native libraries, no Gradle dependencies. The UI is drawn with Android's built-in `Canvas`, the network requests use `HttpURLConnection`, and the JSON uses Android's built-in `org.json`. The result is an APK of **about 60 KB**, about **12 MB PSS** at runtime and a panel that starts almost instantly on a 1 GB tablet.
+Because there is almost nothing inside: no AndroidX, no image assets, no native libraries, no Gradle dependencies. The UI is drawn with Android's built-in `Canvas`, the network requests use `HttpURLConnection`, and the JSON uses Android's built-in `org.json`. The result is an APK of **about 53 KB**, about **12 MB PSS** at runtime and a panel that starts almost instantly on a 1 GB tablet.
 
 ## How do I update to a new version?
 
-- Download the new APK from the repository's `apk/` folder or the [Releases page](https://github.com/Miles64girt/smart-dashboard/releases).
+- Download the new APK from the repository's `apk/` folder or the [Releases page](https://github.com/Miles64girt/smart-dashboard/releases/latest).
 - Install it over the old one — the update keeps your custom packing items and cache, **as long as the signing key is the same**.
 - Check [CHANGELOG.md](../../CHANGELOG.md) before updating.
 - If you see "App not installed", the keys differ — uninstall and reinstall (losing local settings). See [the signature question above](#why-do-i-get-app-not-installed-or-a-signature-conflict-when-updating).
